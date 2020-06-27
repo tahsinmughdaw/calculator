@@ -1,0 +1,78 @@
+#include<stdio.h>
+double result;
+double addition(int a,int b)
+{
+    result=a+b;
+    return result;
+}
+double subtraction(int a,int b)
+{
+    if(a>b)
+    {
+        result=a-b;
+    }
+    else
+    {
+        result=b-a;
+    }
+    return result;
+}
+double multiplication(int a,int b)
+{
+    result=a*b;
+    return result;
+}
+double division(int a,int b)
+{
+    result=a/b;
+    return result;
+}
+int main()
+{
+    int n,num1,num2;
+    printf("What you want to do\n");
+    printf("If you want to addition then press 1\n");
+    printf("If you want to subtraction then press 2\n");
+    printf("If you want to multiplication then press 3\n");
+    printf("If you want to division then press 4\n");
+    scanf("%d",&n);
+    switch(n)
+    {
+    case 1:
+    {
+        printf("Enter two number\n");
+        scanf("%d %d",&num1,&num2 );
+        printf("Your Addition number %.2lf\n",addition(num1,num2));
+        break;
+    }
+    case 2:
+    {
+        printf("Enter two number\n");
+        scanf("%d %d",&num1,&num2);
+        printf("Your subtraction number %.2lf\n",subtraction (num1,num2));
+        break;
+    }
+    case 3:
+    {
+        printf("Enter two number\n");
+        scanf("%d %d",&num1,&num2);
+        printf("Your multiplication number %.2lf\n",multiplication(num1,num2));
+        break;
+    }
+    case 4:
+    {
+        printf("Enter two number\n");
+        scanf("%d %d",&num1,&num2);
+        if(num2!=0)
+        {
+            printf("Your Division number %.2lf\n",division(num1,num2));
+        }
+        else
+        {
+            printf("It's not possible\n");
+        }
+        break;
+    }
+    }
+    return 0;
+}
