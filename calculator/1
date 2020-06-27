@@ -1,0 +1,98 @@
+#include<stdio.h>
+double add(double a,double b)
+{
+    return a+b;
+}
+double sub(double a,double b)
+{
+    return a-b;
+}
+double mul(double a,double b)
+{
+    return a*b;
+}
+double div(double a,double b)
+{
+    return a/b;
+}
+double mod(double a,double b)
+{
+    return a%b;
+}
+int main()
+{
+    double num1,num2;
+    char op;
+    printf("Enter an operator(+,-,*,/,%):");
+    scanf("%c",&op);
+    printf("\nEnter two numbers:");
+    while(scanf("%lf%lf",&num1,&num2)!=EOF)
+    {
+        switch(op)
+        {
+        case '+' :
+        {
+            double result=add(num1,num2);
+            printf("result=%lf\n",result);
+            break;
+        }
+        case '-' :
+        {
+            if(num1<num2)
+            {
+                double temp;
+                temp=num1;
+                num1=num2;
+                num2=temp;
+            }
+            double result=sub(num1,num2);
+            printf("result=%lf\n",result);
+            break;
+        }
+        case '*' :
+        {
+            double result=mul(num1,num2);
+            printf("result=%lf\n",result);
+            break;
+        }
+        case '/' :
+        {
+            if(num2==0)
+            {
+                printf("This is impossible");
+                break;
+            }
+            else
+            {
+                if(num1<num2)
+                {
+                    double temp;
+                    temp=num1;
+                    num1=num2;
+                    num2=temp;
+                }
+                double result=div(num1,num2);
+                printf("result=%lf\n",result);
+                break;
+            }
+        }
+        case '%' :
+        {
+            if(num2==0)
+            {
+                printf("This is impossible");
+                break;
+            }
+            else
+            {
+                double result=mod(num1,num2);
+                printf("result=%lf\n",result);
+                break;
+            }
+        }
+        default:
+            printf("Not a valid operation\n");
+        }
+    }
+    return 0;
+}
